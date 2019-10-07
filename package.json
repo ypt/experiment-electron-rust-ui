@@ -1,0 +1,23 @@
+{
+  "name": "experiment-electron-rust-ui",
+  "version": "1.0.0",
+  "description": "An experimental Electron UI + Rust backend",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix && tsfmt -r",
+    "lint": "tslint --project tsconfig.json --config tslint.json && tsfmt --verify",
+    "start": "npm run build && electron ./dist/main.js"
+  },
+  "keywords": [
+    "Electron",
+    "Rust",
+    "Typescript"
+  ],
+  "devDependencies": {
+    "electron": "^6.0.11",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3",
+    "typescript-formatter": "^7.2.2"
+  }
+}
