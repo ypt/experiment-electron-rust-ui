@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "An experimental Electron UI + Rust backend",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "webpack --config webpack.config.js",
     "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix && tsfmt -r",
     "lint": "tslint --project tsconfig.json --config tslint.json && tsfmt --verify",
-    "start": "npm run build && electron ./dist/main.js"
+    "prestart": "npm run build",
+    "start": "electron ./dist/main.js"
   },
   "keywords": [
     "Electron",
@@ -15,9 +15,22 @@
     "Typescript"
   ],
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "babel-loader": "^8.0.6",
     "electron": "^6.0.11",
+    "html-webpack-plugin": "^3.2.0",
+    "standard": "^14.3.1",
+    "standard-loader": "^7.0.0",
+    "ts-loader": "^6.2.0",
     "tslint": "^5.20.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-loader": "^3.5.4",
     "typescript": "^3.6.3",
-    "typescript-formatter": "^7.2.2"
+    "typescript-formatter": "^7.2.2",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   }
 }
