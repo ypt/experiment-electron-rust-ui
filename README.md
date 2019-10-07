@@ -4,8 +4,7 @@ An experimental Electron UI with a Rust backend
 
 ## Build and run
 ```bash
-# Install dependencies
+cd ui
 npm install
-# Run the app
 npm start
 ```
