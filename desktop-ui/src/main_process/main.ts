@@ -10,7 +10,7 @@ function createWindow() {
     webPreferences: {
       // TODO: look into nodeIntegration safety
       nodeIntegration: true,
-      preload: path.join(__dirname, "preload.js"),
+      preload: path.join(__dirname, "preload_process.js"),
     },
     width: 800,
   });

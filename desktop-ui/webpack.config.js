@@ -34,14 +34,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = [
   Object.assign(
     {
+      entry: { preload_process: './src/preload_process/main.ts' }
+    },
+    commonConfig),
+  Object.assign(
+    {
       target: 'electron-main',
-      entry: { main: './src/main.ts' }
+      entry: { main_process: './src/main_process/main.ts' }
     },
     commonConfig),
   Object.assign(
     {
       target: 'electron-renderer',
-      entry: { renderer: './src/renderer/index.ts' },
+      entry: { render_process: './src/render_process/main.ts' },
       plugins: [new HtmlWebpackPlugin()]
     },
     commonConfig)
